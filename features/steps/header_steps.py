@@ -17,3 +17,8 @@ def click_cart_icon(context):
 def click_sign_in_button(context):
     context.driver.find_element(By.ID, 'account-sign-in').click()
     sleep(7)
+
+@when("Click on Target Circle button")
+def click_target_circle_button(context):
+    context.driver.find_element(By.ID, "utilityNav-circle").click()
+    sleep(7)
