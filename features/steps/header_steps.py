@@ -2,11 +2,11 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 from time import sleep
 
-SEARCH_FIELD = By.ID, 'search'
-SEARCH_BTN = By.XPATH, "//button[@data-test='@web/Search/SearchButton']"
-CART_ICON = By.CSS_SELECTOR, "[data-test='@web/CartLink']"
-ACCOUNT_BTN = By.ID, 'account-sign-in'
-TARGET_CIRCLE_BTN = By.ID, "utilityNav-circle"
+SEARCH_FIELD = (By.ID, 'search')
+SEARCH_BTN = (By.XPATH, "//button[@data-test='@web/Search/SearchButton']")
+CART_ICON = (By.CSS_SELECTOR, "[data-test='@web/CartLink']")
+ACCOUNT_BTN = (By.ID, 'account-sign-in')
+TARGET_CIRCLE_BTN = (By.ID, "utilityNav-circle")
 
 @when("Search for {search_query}")
 def search_product(context,search_query):

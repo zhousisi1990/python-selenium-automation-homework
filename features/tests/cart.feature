@@ -12,5 +12,5 @@ Feature: Cart test cases
     And Click on Add to cart button from side menu
     And CLose side menu
     And Click on Cart icon
-    Then Verify cart has 1 item
+    Then Verify cart has 1 item(s)
 

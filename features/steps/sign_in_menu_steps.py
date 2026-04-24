@@ -2,8 +2,8 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 from time import sleep
 
-SIGN_IN_MENU_BTN = By.XPATH, "//button[@data-test='accountNav-signIn']"
-SIGN_IN_FORM_TEXT = By.XPATH, "//h1[text()='Sign in or create account']"
+SIGN_IN_MENU_BTN = (By.XPATH, "//button[@data-test='accountNav-signIn']")
+SIGN_IN_FORM_TEXT = (By.XPATH, "//h1[text()='Sign in or create account']")
 
 @when("Click Sign In from right side navigation menu")
 def click_sign_in_from_navigation(context):

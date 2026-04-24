@@ -2,8 +2,10 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 from time import sleep
 
-ADD_TO_CART_BTN = By.CSS_SELECTOR,"[data-test='orderPickupButton']"
-CLOSE_SIDE_MENU_BTN =  By.CSS_SELECTOR,"[class*='styles_nonScrollModalContent'] button[aria-label='close']"
+# This can only cover the search result which can be picked up
+# ADD_TO_CART_BTN = By.CSS_SELECTOR,"[data-test='orderPickupButton']"
+ADD_TO_CART_BTN = (By.CSS_SELECTOR,"[data-test='content-wrapper'] button[id*='addToCartButton']")
+CLOSE_SIDE_MENU_BTN =  (By.CSS_SELECTOR,"[class*='styles_nonScrollModalContent'] button[aria-label='close']")
 
 @when("Click on Add to cart button from side menu")
 def click_on_to_cart_button(context):

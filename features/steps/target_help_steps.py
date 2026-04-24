@@ -2,14 +2,14 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 from time import sleep
 
-HELP_RESULT_TEXT = By.CSS_SELECTOR,"[class*='PageHeader'] h1"
-QUESTION_RESULT_TEXT = By.CSS_SELECTOR, "[class*='HelpSearch_helpSearchContainer'] span[class*='styles_textSpan']"
-HELP_BTN_TEXT =  By.CSS_SELECTOR, "[class*='HelpSearch_helpSearchHeaderContainer' ] button"
-SEARCH_TEXT = By.CSS_SELECTOR, "[class*='HelpSearch_searchButtonContainer'] button"
-WHAT_HELP_TEXT = By.CSS_SELECTOR, "[class*=SelfServiceLinks_selfServiceContainer] span[class*='styles_textSpan']"
-LINKS_AMOUNT = By.CSS_SELECTOR, "[class*='NavCard_navCardWrapper'] a"
-POPULAR_TEXT =  By.CSS_SELECTOR, "[class*='LinkCard_titleCard']"
-POPULAR_SECTION_LINKS_AMOUNT = By.CSS_SELECTOR, "[class*='LinkItem_styledLink']"
+HELP_RESULT_TEXT = (By.CSS_SELECTOR,"[class*='PageHeader'] h1")
+QUESTION_RESULT_TEXT = (By.CSS_SELECTOR, "[class*='HelpSearch_helpSearchContainer'] span[class*='styles_textSpan']")
+HELP_BTN_TEXT =  (By.CSS_SELECTOR, "[class*='HelpSearch_helpSearchHeaderContainer' ] button")
+SEARCH_TEXT = (By.CSS_SELECTOR, "[class*='HelpSearch_searchButtonContainer'] button")
+WHAT_HELP_TEXT = (By.CSS_SELECTOR, "[class*=SelfServiceLinks_selfServiceContainer] span[class*='styles_textSpan']")
+LINKS_AMOUNT = (By.CSS_SELECTOR, "[class*='NavCard_navCardWrapper'] a")
+POPULAR_TEXT =  (By.CSS_SELECTOR, "[class*='LinkCard_titleCard']")
+POPULAR_SECTION_LINKS_AMOUNT = (By.CSS_SELECTOR, "[class*='LinkItem_styledLink']")
 
 @given("User navigates to target help page")
 def open_target_main(context):
