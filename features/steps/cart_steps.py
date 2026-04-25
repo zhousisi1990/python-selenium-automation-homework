@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
-from time import sleep
+from selenium.webdriver.support import expected_conditions as EC
 import re
 
 CART_EMPTY_MSG = (By.CSS_SELECTOR, "[data-test='boxEmptyMsg'] h1")
@@ -11,7 +11,9 @@ CART_ITEM_AMOUNT = (By.XPATH,"//h2[./span[contains(text(),'subtotal')]]")
 @then("Verify “Your cart is empty” message is shown")
 def verify_cart_empty_msg(context):
     expected_result = 'Your cart is empty'
-    actual_result = context.driver.find_element(*CART_EMPTY_MSG).text
+    actual_result = context.wait.until(
+        EC.visibility_of_element_located(CART_EMPTY_MSG),
+        message="Your cart is empty text not shown").text
     assert expected_result == actual_result, f'Expected "{expected_result}" not actual to"{actual_result}"'
 
 @then("Verify cart has {item_amount} item(s)")

@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
-from time import sleep
+from selenium.webdriver.support import expected_conditions as EC
 
 HELP_RESULT_TEXT = (By.CSS_SELECTOR,"[class*='PageHeader'] h1")
 QUESTION_RESULT_TEXT = (By.CSS_SELECTOR, "[class*='HelpSearch_helpSearchContainer'] span[class*='styles_textSpan']")
@@ -14,13 +14,13 @@ POPULAR_SECTION_LINKS_AMOUNT = (By.CSS_SELECTOR, "[class*='LinkItem_styledLink']
 @given("User navigates to target help page")
 def open_target_main(context):
     context.driver.get("https://help.target.com/help")
-    sleep(2)
 
 @then("Verifies all main UI elements are displayed")
 def verify_main_ui_elements(context):
     # Header Help
     expected_help_result = 'Help'
-    actual_help_result = context.driver.find_element(*HELP_RESULT_TEXT).text
+    actual_help_result = context.wait.until(EC.visibility_of_element_located(HELP_RESULT_TEXT),
+                                            message='Help text is not visible').text
     assert  expected_help_result == actual_help_result, f'Expected {expected_help_result} but got {actual_help_result}'
 
     # Have a question?

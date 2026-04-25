@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 from behave import given, when, then
-from time import sleep
 
 SEARCH_RESULTS_TEXT = (By.XPATH, "//div[contains(@class, 'styles_resultCount')]")
 # ADD_TO_CART_BTN = By.CSS_SELECTOR,"button[data-test='chooseOptionsButton']"
