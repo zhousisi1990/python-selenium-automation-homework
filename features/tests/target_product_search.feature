@@ -11,3 +11,7 @@ Feature: Test cases for Product Search on Target
     When Search for coffee
     Then Verify search results for coffee shown
 
+  Scenario: Verify each product has name and image on search results page
+    Given Open Target main page
+    When Search for rice
+    Then Each product should have a product name and img
