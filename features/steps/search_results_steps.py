@@ -2,8 +2,6 @@ from selenium.webdriver.common.by import By
 from behave import given, when, then
 from time import sleep
 
-SEARCH_RESULTS_TEXT = (By.XPATH, "//div[contains(@class, 'styles_resultCount')]")
-# ADD_TO_CART_BTN = By.CSS_SELECTOR,"button[data-test='chooseOptionsButton']"
 ADD_TO_CART_BTN = (By.CSS_SELECTOR, "[id*='addToCartButton']")
 PRODUCT_LISTS = (By.CSS_SELECTOR, "[data-test='@web/site-top-of-funnel/ProductCardWrapper']")
 PRODUCT_TITLE = (By.CSS_SELECTOR,"[data-test='@web/ProductCard/title']")
@@ -25,7 +23,6 @@ def verify_search_results(context,product):
     # assert product in actual_result, f'Expected "{product}" not in actual "{actual_result}"'
     context.app.search_result_page.verify_search_result(product)
 
-# "[data-test='@web/site-top-of-funnel/ProductCardWrapper'] picture[data-test='@web/ProductCard/ProductCardImage/primary'] img"
 @then("Each product should have a product name and img")
 def each_product_name_img(context):
    context.driver.execute_script("window.scrollBy(0,1500)", "")

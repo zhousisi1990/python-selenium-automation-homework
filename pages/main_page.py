@@ -4,5 +4,5 @@ from time import sleep
 class MainPage(Page):
 
     def open_main_page(self):
-        Page.open_url()
+        self.open_url()
         sleep(2)
