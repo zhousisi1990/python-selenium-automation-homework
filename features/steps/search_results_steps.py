@@ -21,8 +21,9 @@ def click_on_first_add(context):
 
 @then("Verify search results for {product} shown")
 def verify_search_results(context,product):
-    actual_result = context.driver.find_element(*SEARCH_RESULTS_TEXT).text
-    assert product in actual_result, f'Expected "{product}" not in actual "{actual_result}"'
+    # actual_result = context.driver.find_element(*SEARCH_RESULTS_TEXT).text
+    # assert product in actual_result, f'Expected "{product}" not in actual "{actual_result}"'
+    context.app.search_result_page.verify_search_result(product)
 
 # "[data-test='@web/site-top-of-funnel/ProductCardWrapper'] picture[data-test='@web/ProductCard/ProductCardImage/primary'] img"
 @then("Each product should have a product name and img")
