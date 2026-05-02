@@ -1,4 +1,5 @@
 from pages.base_page import Page
+from pages.cart_side_menu_page import CartSideMenuPage
 from pages.header import Header
 from pages.main_page import MainPage
 from pages.search_result_page import SearchResultPage
@@ -14,3 +15,4 @@ class Application:
         self.search_result_page = SearchResultPage(driver)
         self.cart_result_page = CartResultPage(driver)
         self.sign_in_menu_page = SignInMenu(driver)
+        self.cart_side_menu_page = CartSideMenuPage(driver)

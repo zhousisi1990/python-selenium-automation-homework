@@ -3,13 +3,9 @@ from behave import given, when, then
 from selenium.webdriver.support import expected_conditions as EC
 
 TARGET_CIRCLE_BTN = (By.ID, "utilityNav-circle")
-ADS_LINK = (By.CSS_SELECTOR, "a#ad-link")
 
 @when("Search for {search_query}")
 def search_product(context,search_query):
-    # context.driver.find_element(*SEARCH_FIELD).send_keys(search_query)
-    # context.driver.find_element(*SEARCH_BTN).click()
-    # context.wait.until(EC.invisibility_of_element_located(ADS_LINK,))
     context.app.header.search_product(search_query)
 
 @when("Click on Cart icon")
