@@ -25,11 +25,11 @@ def verify_search_results(context,product):
 
 @then("Each product should have a product name and img")
 def each_product_name_img(context):
-   context.driver.execute_script("window.scrollBy(0,1500)", "")
+   context.driver.execute_script("window.scrollBy(0,1700)", "")
    sleep(0.5)
-   context.driver.execute_script("window.scrollBy(0,1500)", "")
+   context.driver.execute_script("window.scrollBy(0,1700)", "")
    sleep(0.5)
-   context.driver.execute_script("window.scrollBy(0,1500)", "")
+   context.driver.execute_script("window.scrollBy(0,1700)", "")
    sleep(0.5)
 
    products = context.driver.find_elements(*PRODUCT_LISTS)
@@ -37,8 +37,8 @@ def each_product_name_img(context):
        title = product.find_element(*PRODUCT_TITLE).text
        assert title, 'Product title not shown'
        print(f'🟢{title}')
-       img = product.find_element(*PRODUCT_IMG)
-       print(img.get_attribute('src'))
+       # img = product.find_element(*PRODUCT_IMG)
+       # print(img.get_attribute('src'))
 
 
 

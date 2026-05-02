@@ -10,7 +10,7 @@ Feature: Cart test cases
     When Search for Toothpaste
     And Click on the first Add to cart button
     And Click on Add to cart button from side menu
-    And CLose side menu
+    And Close side menu
     And Click on Cart icon
     Then Verify cart has 1 item(s)
 

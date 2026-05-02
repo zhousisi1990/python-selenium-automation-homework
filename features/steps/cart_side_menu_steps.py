@@ -15,7 +15,7 @@ def click_on_to_cart_button(context):
         message='Add to Cart button from side navigation not visible'
     ).click()
 
-@when("CLose side menu")
+@when("Close side menu")
 def close_side_menu(context):
     # buttons = context.driver.find_elements(By.CSS_SELECTOR,'button[aria-label="close"]')
     # buttons[1].click()
