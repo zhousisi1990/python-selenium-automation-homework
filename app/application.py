@@ -6,6 +6,7 @@ from pages.search_result_page import SearchResultPage
 from pages.cart_result_page import CartResultPage
 from pages.sign_in_page import SignInPage
 from pages.sign_in_menu_page import SignInMenu
+from pages.terms_conditions_page import TermsAndConditionsPage
 
 
 class Application:
@@ -18,3 +19,4 @@ class Application:
         self.sign_in_menu_page = SignInMenu(driver)
         self.cart_side_menu_page = CartSideMenuPage(driver)
         self.sign_in_page = SignInPage(driver)
+        self.terms_and_conditions_page = TermsAndConditionsPage(driver)

@@ -17,6 +17,9 @@ class SignInPage(Page):
     PASSWORD_INPUT = (By.ID, "password")
     EXPECTED_VERIFY_TEXT = 'Verification code sent'
     VERIFY_TEXT = (By.XPATH, "//span[contains(text(),'Verification code')]")
+    TERMS_LINK = (By.XPATH, "//a[text()='terms']")
+    EXPECTED_TERMS_TEXT = 'Terms'
+    VERIFY_TERMS_TEXT = (By.CSS_SELECTOR, "[data-test='page-title']")
 
     def  verify_sign_in_form(self):
          self.verify_text(self. EXPECTED_RESULT,self.SIGN_IN_FORM_TEXT)
@@ -40,5 +43,9 @@ class SignInPage(Page):
     def verify_verification_code_sent(self):
         self.verify_text(self.EXPECTED_VERIFY_TEXT,self.VERIFY_TEXT)
 
+    def open_sign_in_page(self ):
+        self.open_url('orders?lnk=acct_nav_my_account')
 
+    def click_on_target_terms_and_conditions_link(self):
+        self.wait_until_clickable_click(self.TERMS_LINK)
 
